@@ -32,3 +32,18 @@ footer {
 main {
     padding-bottom: 20px;
 }
+
+a.start {
+    display: inline-block;
+    color: #666;
+    background: #f4f4f4;
+    border: 1px dotted #ccc;
+    padding: 6px 13px
+}
+
+.current {
+    padding: 10px;
+    background: #f4f4f4;
+    border: #ccc dotted 1px;
+    margin: 20px 0 10px 0;
+}
