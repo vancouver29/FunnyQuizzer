@@ -1,8 +1,17 @@
+<?php session_start(); ?>
 <?php include 'database.php'?>
 
 <?php
 //Set question number
 $number = (int)$_GET['n'];
+
+/*
+     * Get total questions
+     */
+$query = "SELECT * FROM questions";
+// Get result
+$results = $mysqli->query($query) or die($mysqli->error . __LINE__);
+$total = $results->num_rows;
 
 /*
  * ------------------Get Question------------------------
@@ -43,7 +52,7 @@ $choices = $mysqli->query($query) or die($mysqli->error . __LINE__);
     </header>
     <main>
         <div class="container">
-            <div class="current">Question 1 of 5 </div>
+            <div class="current">Question <?php echo $question['question_number'] ?> of <?php echo $total ?></div>
             <p class="question">
                 <?php echo $question['text']; ?>
             </p>
@@ -51,10 +60,14 @@ $choices = $mysqli->query($query) or die($mysqli->error . __LINE__);
                 <ul class="choices">
 
                     <?php while($row = $choices->fetch_assoc()) : ?>
+                        <?php if ($number == 1) {
+                            $_SESSION['score'] = 0;
+                        } ?>
                        <li><input name="choice" type="radio" value="<?php echo $row['id']; ?>"><?php echo $row['text'];?></li>
                     <?php endwhile; ?>
                 </ul>
                 <input type="submit" value="Submit">
+                <input type="hidden" name="number" value="<?php echo $number; ?>">
             </form>
         </div>
     </main>
