@@ -60,6 +60,15 @@ a.start {
     padding: 6px 13px
 }
 
+a.add {
+    display: inline-block;
+    color: blue;
+    background: #f4f4f4;
+    border: 1px dotted #ccc;
+    padding: 6px 13px;
+    margin-left: 20px;
+}
+
 .current {
     padding: 10px;
     background: #f4f4f4;

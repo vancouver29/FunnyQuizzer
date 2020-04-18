@@ -33,6 +33,7 @@ $total = $results->num_rows;
                 <li><strong>Estimated Time: </strong><?php echo $total * .5; ?> Minutes</li>
             </ul>
             <a href="question.php?n=1" class="start">Start Quiz</a>
+            <a href="add.php" class="add">Add new question</a>
         </div>
     </main>
     <footer>
