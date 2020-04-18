@@ -30,7 +30,7 @@ $total = $results->num_rows;
             <ul>
                 <li><strong>Number of Questions: </strong><?php echo $total?></li>
                 <li><strong>Type: </strong>Multiple Choice</li>
-                <li><strong>Estimated Time: </strong><?php echo $total * .5; ?> Minutes</li>
+                <li><strong>Estimated Time: </strong><?php echo $total * .25; ?> Minutes</li>
             </ul>
             <a href="question.php?n=1" class="start">Start Quiz</a>
             <a href="add.php" class="add">Add new question</a>
